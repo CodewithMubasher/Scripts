@@ -1,3 +1,5 @@
-Write-Host "Hello Mubasher" -ForegroundColor Green
+# Wait 10 seconds
+Start-Sleep -Seconds 10
 
-Start-Process powershell.exe -ArgumentList '-NoExit', '-Command', 'Write-Host "Hello Mubasher" -ForegroundColor Green'
+# Lock the workstation
+rundll32.exe user32.dll,LockWorkStation
