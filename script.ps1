@@ -1,5 +1,12 @@
-# Wait 10 seconds
-Start-Sleep -Seconds 10
+# Completely silent lock - NO WINDOW at all
+Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+public class LockScreen {
+    [DllImport("user32.dll")]
+    public static extern bool LockWorkStation();
+}
+"@
 
-# Lock the workstation
-rundll32.exe user32.dll,LockWorkStation
+Start-Sleep -Seconds 10
+[LockScreen]::LockWorkStation()
