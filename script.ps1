@@ -1,12 +1,4 @@
-# Completely silent lock - NO WINDOW at all
-Add-Type -TypeDefinition @"
-using System;
-using System.Runtime.InteropServices;
-public class LockScreen {
-    [DllImport("user32.dll")]
-    public static extern bool LockWorkStation();
-}
-"@
-
-Start-Sleep -Seconds 10
-[LockScreen]::LockWorkStation()
+' 100% invisible lock screen
+WScript.Sleep 1000
+Set objShell = CreateObject("WScript.Shell")
+objShell.Run "rundll32.exe user32.dll,LockWorkStation", 0, False
